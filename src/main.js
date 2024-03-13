@@ -94,7 +94,9 @@ function buyWeapon(){
     gold -= 30;
     currentWeapon += 1;
     goldText.innerText=gold;
-    text.innerText="You now have a new weapon."
+    let newWeapon = weapons[currentWeapon].name;
+    inventory.push(newWeapon);
+    text.innerText="You now have a "+newWeapon+".";
   };
 };
 
