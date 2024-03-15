@@ -90,7 +90,8 @@ function buyHealth(){
 };
 
 function buyWeapon(){
-  if (gold >=30){
+  if(currentWeapon < 3) {
+    if (gold >=30){
     gold -= 30;
     currentWeapon += 1;
     goldText.innerText=gold;
@@ -98,9 +99,11 @@ function buyWeapon(){
     inventory.push(newWeapon);
     text.innerText="You now have a "+newWeapon+".";
     text.innerText += " In your inventory you have: "+inventory;
-  } else {
+    } else {
     text.innerText = "You do not have enough gold to buy a weapon."
-  };
+    };
+  }
+  
 };
 
 function fightSlime(){
