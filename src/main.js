@@ -97,6 +97,9 @@ function buyWeapon(){
     let newWeapon = weapons[currentWeapon].name;
     inventory.push(newWeapon);
     text.innerText="You now have a "+newWeapon+".";
+    text.innerText += " In your inventory you have: "+inventory;
+  } else {
+    text.innerText = "You do not have enough gold to buy a weapon."
   };
 };
 
