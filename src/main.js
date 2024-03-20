@@ -118,6 +118,13 @@ function fightBeast(){
 
 };
 
+function sellWeapon(){
+  if(inventory.length > ) {
+    gold += 15;
+    goldText.innerText = gold;
+  }
+};
+
 function update(location){
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
