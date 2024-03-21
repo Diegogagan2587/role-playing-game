@@ -62,6 +62,17 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+function update(location){
+  button1.innerText = location["button text"][0];
+  button2.innerText = location["button text"][1];
+  button3.innerText = location["button text"][2];
+  text.innerText = location.text;
+
+  button1.onclick = location["button functions"][0];
+  button2.onclick = location["button functions"][1];
+  button3.onclick = location["button functions"][2];
+};
+
 function goTown(){
   update(locations[0]);
 };
@@ -73,10 +84,6 @@ function goStore() {
 function goCave(){
   update(locations[2]);
 };
-
-function fightDragon(){
-  console.log("Fighting dragon.")
-}
 
 function buyHealth(){
   if(gold >= 10) {
@@ -110,14 +117,6 @@ function buyWeapon(){
   
 };
 
-function fightSlime(){
-
-};
-
-function fightBeast(){
-
-};
-
 function sellWeapon(){
   if(inventory.length > 1) {
     gold += 15;
@@ -125,17 +124,19 @@ function sellWeapon(){
     let currentWeapon = inventory.shift();
     text.innerText = "You sold a "+currentWeapon+".";
     text.innerText += " In your inventory you have: "+inventory;
+  } else {
+    text.innerText = "Don't sell your only weapon!"
   }
 };
 
-function update(location){
-  button1.innerText = location["button text"][0];
-  button2.innerText = location["button text"][1];
-  button3.innerText = location["button text"][2];
-  text.innerText = location.text;
+function fightDragon(){
+  console.log("Fighting dragon.")
+}
 
-  button1.onclick = location["button functions"][0];
-  button2.onclick = location["button functions"][1];
-  button3.onclick = location["button functions"][2];
+function fightSlime(){
+
 };
 
+function fightBeast(){
+
+};
