@@ -167,5 +167,5 @@ function fightBeast(){
 };
 
 function goFight() {
-
+  update(locations[3]);
 };
